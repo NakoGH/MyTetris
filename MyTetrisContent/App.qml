@@ -1,5 +1,6 @@
 import QtQuick
 import MyTetris
+import MyTetrisContent
 
 Window {
     width: mainScreen.width

@@ -21,7 +21,7 @@ qt_standard_project_setup()
 
 
 qt_add_executable(${CMAKE_PROJECT_NAME}
-    mino.h mino.cpp)
+mino.h mino.cpp)
 qt_add_resources(${CMAKE_PROJECT_NAME} "configuration"
     PREFIX "/"
     FILES

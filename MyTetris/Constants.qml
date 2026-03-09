@@ -6,6 +6,15 @@ QtObject {
     readonly property int width: 1920
     readonly property int height: 1080
 
+    readonly property int gridCols: 10
+    readonly property int gridRows: 20
+
+    readonly property int rectHeight: 40
+    readonly property int rectWidth: 40
+
+    readonly property int holdWidth: 300
+    readonly property int holdHeight: 200
+
     property string relativeFontDirectory: "fonts"
 
     /* Edit this comment to add your custom font */
