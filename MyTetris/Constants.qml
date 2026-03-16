@@ -12,8 +12,11 @@ QtObject {
     readonly property int rectHeight: 40
     readonly property int rectWidth: 40
 
-    readonly property int holdWidth: 300
-    readonly property int holdHeight: 200
+    readonly property int holdWidth: 250
+    readonly property int holdHeight: 205
+    readonly property int holdCols: 6
+    readonly property int holdRows: 4
+
 
     property string relativeFontDirectory: "fonts"
 

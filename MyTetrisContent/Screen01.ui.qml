@@ -21,25 +21,80 @@ Rectangle {
         id: tetrion
         width: 943
         height: Constants.gridRows * Constants.rectHeight
+        anchors.verticalCenterOffset: 0
+        anchors.horizontalCenterOffset: 1
         anchors.centerIn: parent
 
-        Grid {
-            id: matrix
-            width: Constants.rectWidth * Constants.gridCols
-            height: Constants.rectHeight * Constants.gridRows
+        Column {
+            id: column
+            width: 200
+            height: 400
             anchors.centerIn: parent
-            rows: Constants.gridRows
-            columns: Constants.gridCols
 
-            Repeater {
-                model: 200
+            Grid {
+                id: matrix
+                width: Constants.rectWidth * Constants.gridCols
+                height: Constants.rectHeight * Constants.gridRows
+                anchors.centerIn: parent
+                rows: Constants.gridRows
+                columns: Constants.gridCols
 
-                Rectangle {
-                    id: tile
-                    width: Constants.rectWidth
-                    height: Constants.rectHeight
-                    color: "black"
-                    border.color: "gray"
+                Repeater {
+                    model: 200
+
+                    Rectangle {
+                        id: tile
+                        width: Constants.rectWidth
+                        height: Constants.rectHeight
+                        color: "black"
+                        border.color: "gray"
+                    }
+                }
+            }
+
+            Rectangle {
+                id: rectangle1
+                width: Constants.holdWidth
+                height: Constants.holdHeight
+                color: "#ffffff"
+                anchors.right: matrix.left
+                anchors.top: matrix.top
+                anchors.rightMargin: 0
+                anchors.topMargin: 0
+
+                Text {
+                    id: text1
+                    text: qsTr("HOLD")
+                    font.pixelSize: 30
+                    horizontalAlignment: Text.AlignHCenter
+                    anchors.verticalCenterOffset: -85
+                    anchors.horizontalCenterOffset: -73
+                    font.styleName: "Regular"
+                    font.family: "Verdana"
+                    anchors.centerIn: parent
+                }
+
+                Grid {
+                    id: grid
+                    x: 5
+                    y: 40
+                    width: 240
+                    height: 160
+                    rows: 4
+                    columns: 6
+
+                    Repeater {
+                        id: repeater
+                        model: Constants.holdRows * Constants.holdCols
+
+                        Rectangle {
+                            id: holdTile
+                            width: Constants.rectWidth
+                            height: Constants.rectHeight
+                            color: "#000000"
+                            border.color: "#808080"
+                        }
+                    }
                 }
             }
         }
