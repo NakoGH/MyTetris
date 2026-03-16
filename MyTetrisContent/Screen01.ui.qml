@@ -53,7 +53,7 @@ Rectangle {
             }
 
             Rectangle {
-                id: rectangle1
+                id: hold
                 width: Constants.holdWidth
                 height: Constants.holdHeight
                 color: "#ffffff"
@@ -63,7 +63,7 @@ Rectangle {
                 anchors.topMargin: 0
 
                 Text {
-                    id: text1
+                    id: holdLabel
                     text: qsTr("HOLD")
                     font.pixelSize: 30
                     horizontalAlignment: Text.AlignHCenter
@@ -75,7 +75,7 @@ Rectangle {
                 }
 
                 Grid {
-                    id: grid
+                    id: holdGrid
                     x: 5
                     y: 40
                     width: 240
@@ -95,6 +95,49 @@ Rectangle {
                             border.color: "#808080"
                         }
                     }
+                }
+            }
+
+            Rectangle {
+                id: next
+                width: Constants.holdWidth
+                height: Constants.holdHeight
+                color: "#ffffff"
+                anchors.left: matrix.right
+                anchors.top: matrix.top
+                anchors.leftMargin: 0
+                anchors.topMargin: 0
+                Text {
+                    id: nextLabel
+                    text: qsTr("NEXT")
+                    font.pixelSize: 30
+                    horizontalAlignment: Text.AlignHCenter
+                    font.styleName: "Regular"
+                    font.family: "Verdana"
+                    anchors.verticalCenterOffset: -85
+                    anchors.horizontalCenterOffset: -73
+                    anchors.centerIn: parent
+                }
+
+                Grid {
+                    id: nextGrid
+                    x: 5
+                    y: 40
+                    width: 240
+                    height: 160
+                    rows: 4
+                    Repeater {
+                        id: repeater1
+                        model: Constants.holdRows * Constants.holdCols
+                        Rectangle {
+                            id: nextTile
+                            width: Constants.rectWidth
+                            height: Constants.rectHeight
+                            color: "#000000"
+                            border.color: "#808080"
+                        }
+                    }
+                    columns: 6
                 }
             }
         }
